@@ -1,0 +1,79 @@
+.Header{
+    margin-top: -15px !important;
+    width:80vw;
+    height:80vh;
+    margin: 30px auto;
+    background: url('/background.png') no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 25px;
+
+}
+
+.Header-contents{
+    padding: 3rem;
+    animation: fadeIn 2s ;
+}
+
+.Header-contents h2{
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: max(4.5vw,22px);
+    color:white;
+}
+
+.Header-contents p{
+    margin-bottom: 2rem;
+    color:#56021F;
+    font-size: 1vw;
+}
+
+.Header-contents button{
+    background-color: transparent;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius:50px;
+    border: 1px solid #56021F;
+    cursor: pointer;
+    background-color: white;
+    color :  #56021F;
+    transition: 0.3s;
+}
+.Header-contents button:hover{
+    background-color:#56021F;
+    color :   white;
+}
+
+@media (max-width:1050px) {
+    .Header{
+        height: 38vw;
+    }
+
+    .Header-contents{
+        max-width: 45%;
+    }
+}
+
+@media (max-width:750px) {
+    .Header-contents{
+        padding-top: -2rem;
+        max-height: 55%;
+        max-width: 100%;
+    }
+    
+    .Header-contents h2{
+       margin-top: -1.6rem;
+       text-align: left;
+    }
+
+
+    .Header-contents p{
+        display: none;
+    }
+
+    .Header-contents button{
+        padding: 2vw 4vw;
+    }
+
+}
