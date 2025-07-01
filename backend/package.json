@@ -10,7 +10,7 @@
     "server": "nodemon server.js"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",          
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
@@ -23,6 +23,9 @@
     "razorpay": "^2.9.6",
     "stripe": "^18.0.0",
     "validator": "^13.15.0"
+  },
+  "engines": {
+    "node": "18.x"                 
   },
   "serviceworker": {
     "src": "/path/to/your/service-worker.js"
