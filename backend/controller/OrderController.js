@@ -15,7 +15,7 @@ const razorpay = new Razorpay({
 // placing userOrder for frontend
 const placeOrder=async (req,res) => {
 
-    const frontend_url ="http://localhost:5173";
+    const frontend_url ="https://gifting-site-frontend.onrender.com/";
 
     try {
         const newOrder =new orderModel({
