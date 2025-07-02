@@ -7,7 +7,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
     const [Cartitem, setCartitem] = useState({});
-    const url = "https://jewel-gifting-site.onrender.com/";
+    const url = "https://jewel-gifting-site.onrender.com";
     const [token, setToken] = useState("")
     const [Product_list, setProductlist] = useState([]);
 
