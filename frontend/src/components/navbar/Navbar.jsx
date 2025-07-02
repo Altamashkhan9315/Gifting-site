@@ -3,7 +3,7 @@ import './Navbar.css'
 import {assets} from '../../assets/assets/'
 import { Link, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext'
-import { FaSearch, FaShoppingCart, FaUser, FaShoppingBag, FaSignOutAlt } from 'react-icons/fa'
+import { FaSearch, FaShoppingCart, FaUser, FaShoppingBag, FaSignOutAlt, FaBars } from 'react-icons/fa'
 
 
 
@@ -34,17 +34,19 @@ function Navbar({setshowLogin}) {
   );
   setFilteredResults(filtered);
   };
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
 
 
   return (
     <div className='navbar'>
       <Link to='/'><h1 className='logo1'>JEWEL .</h1></Link>
-      <ul className="navbar-menu">
-      <Link to='/' onClick={()=>setmenu("home")} className={menu==='home'?'active':" "}>home</Link>
-        <a href='#app-download' onClick={()=>setmenu("mobile-app")} className={menu==='mobile-app'?'active':" "}>mobile-app</a>
-        <a href='#Explore_menu' onClick={()=>setmenu("menu")} className={menu==='menu'?'active':" "}>menu</a>
-        <a href='#footer' onClick={()=>setmenu("contact us")} className={menu==='contact us'?'active':" "}>contact us</a>
+      <FaBars className='hamburger-icon' onClick={() => setShowMobileMenu(!showMobileMenu)} />
+      <ul className={`navbar-menu${showMobileMenu ? ' show' : ''}`}>
+      <Link to='/' onClick={()=>{setmenu("home"); setShowMobileMenu(false);}} className={menu==='home'?'active':" "}>home</Link>
+        <a href='#app-download' onClick={()=>{setmenu("mobile-app"); setShowMobileMenu(false);}} className={menu==='mobile-app'?'active':" "}>mobile-app</a>
+        <a href='#Explore_menu' onClick={()=>{setmenu("menu"); setShowMobileMenu(false);}} className={menu==='menu'?'active':" "}>menu</a>
+        <a href='#footer' onClick={()=>{setmenu("contact us"); setShowMobileMenu(false);}} className={menu==='contact us'?'active':" "}>contact us</a>
       </ul>
       <div className="navbar-right">
         <FaSearch className='icon' onClick={() => setShowSearch(!showSearch)} />

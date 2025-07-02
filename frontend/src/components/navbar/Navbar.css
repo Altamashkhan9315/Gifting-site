@@ -180,9 +180,47 @@
     
 }
 
+.hamburger-icon {
+    display: none;
+    font-size: 2rem;
+    color: #D23E53;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
 @media (max-width:750px){
     .navbar-menu{
         display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        background: #fff2ef;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 1rem 0;
+    }
+    .navbar-menu.show{
+        display: flex;
+    }
+    .navbar-menu a, .navbar-menu .active {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        border: none;
+        background: none;
+        text-align: left;
+        color: #D23E53;
+    }
+    .hamburger-icon {
+        display: block;
+    }
+    .navbar {
+        position: relative;
+        flex-wrap: wrap;
     }
     .navbar-right{
         margin-right: 0.2rem;
