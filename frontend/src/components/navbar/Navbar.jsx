@@ -3,7 +3,7 @@ import './Navbar.css'
 import {assets} from '../../assets/assets/'
 import { Link, useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext'
-import { FaSearch, FaShoppingCart, FaUser, FaShoppingBag, FaSignOutAlt, FaBars } from 'react-icons/fa'
+import { FaSearch, FaShoppingCart, FaUser, FaShoppingBag, FaSignOutAlt, FaBars, FaTimes } from 'react-icons/fa'
 
 
 
@@ -41,12 +41,14 @@ function Navbar({setshowLogin}) {
   return (
     <div className='navbar'>
       <Link to='/'><h1 className='logo1'>JEWEL .</h1></Link>
-      <FaBars className='hamburger-icon' onClick={() => setShowMobileMenu(!showMobileMenu)} />
+      <FaBars className='hamburger-icon' onClick={() => setShowMobileMenu(true)} />
       <ul className={`navbar-menu${showMobileMenu ? ' show' : ''}`}>
-      <Link to='/' onClick={()=>{setmenu("home"); setShowMobileMenu(false);}} className={menu==='home'?'active':" "}>home</Link>
+        <FaTimes className='close-icon' onClick={() => setShowMobileMenu(false)} />
+        <Link to='/' onClick={()=>{setmenu("home"); setShowMobileMenu(false);}} className={menu==='home'?'active':" "}>home</Link>
         <a href='#app-download' onClick={()=>{setmenu("mobile-app"); setShowMobileMenu(false);}} className={menu==='mobile-app'?'active':" "}>mobile-app</a>
         <a href='#Explore_menu' onClick={()=>{setmenu("menu"); setShowMobileMenu(false);}} className={menu==='menu'?'active':" "}>menu</a>
         <a href='#footer' onClick={()=>{setmenu("contact us"); setShowMobileMenu(false);}} className={menu==='contact us'?'active':" "}>contact us</a>
+        {!token && <button className='mobile-signin-btn' onClick={()=>{setshowLogin(true); setShowMobileMenu(false);}}>sign in</button>}
       </ul>
       <div className="navbar-right">
         <FaSearch className='icon' onClick={() => setShowSearch(!showSearch)} />
@@ -79,8 +81,8 @@ function Navbar({setshowLogin}) {
           <Link to='/cart'><FaShoppingCart className='icon'/></Link>
           <div className={getTotalcartAmount()===0?"":"dot"}></div>
         </div>
-        {!token?<button onClick={()=>setshowLogin(true)}>sign in</button>
-        :<div className='navbar-profile'>
+        {!token && <button className='desktop-signin-btn' onClick={()=>setshowLogin(true)}>sign in</button>}
+        {token && <div className='navbar-profile'>
             <FaUser className='icon' />
             <ul className='nav-profile-dropdown'>
                 <li onClick={()=>(navigate('/myorders'))}><FaShoppingBag className='icon' /><p>Orders</p></li>
