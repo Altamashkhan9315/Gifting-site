@@ -1,6 +1,6 @@
 import userModel from "../models/UserModel.js";
 import jwt from "jsonwebtoken";
-import bcrypt, { hash } from 'bcrypt';
+import bcrypt, { hash } from '@node-rs/bcrypt';
 import validator from "validator"
 
 

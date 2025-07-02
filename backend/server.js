@@ -3,7 +3,7 @@ import cors from "cors"
 import { connectDB } from "./config/db.js";
 import ProductRouter from "./routes/ProductRoute.js";
 import userRouter from "./routes/UserRoute.js";
-import bcrypt from 'bcrypt';
+import bcrypt from '@node-rs/bcrypt';
 import dotenv from "dotenv";
 import cartRouter from "./routes/CartRoute.js";
 import orderRouter from "./routes/OrderRoute.js";
