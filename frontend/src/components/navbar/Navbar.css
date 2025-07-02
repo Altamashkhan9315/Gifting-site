@@ -255,6 +255,10 @@
     .desktop-signin-btn {
         display: none;
     }
+
+    .search-dropdown{
+        margin-left: 1rem;
+    }
     .navbar {
         position: relative;
         flex-wrap: wrap;
