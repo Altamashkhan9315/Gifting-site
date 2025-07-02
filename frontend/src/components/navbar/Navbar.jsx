@@ -41,7 +41,15 @@ function Navbar({setshowLogin}) {
   return (
     <div className='navbar'>
       <Link to='/'><h1 className='logo1'>JEWEL .</h1></Link>
-      
+      <FaBars className='hamburger-icon' onClick={() => setShowMobileMenu(true)} />
+      <ul className={`navbar-menu${showMobileMenu ? ' show' : ''}`}>
+        <FaTimes className='close-icon' onClick={() => setShowMobileMenu(false)} />
+        <Link to='/' onClick={()=>{setmenu("home"); setShowMobileMenu(false);}} className={menu==='home'?'active':" "}>home</Link>
+        <a href='#app-download' onClick={()=>{setmenu("mobile-app"); setShowMobileMenu(false);}} className={menu==='mobile-app'?'active':" "}>mobile-app</a>
+        <a href='#Explore_menu' onClick={()=>{setmenu("menu"); setShowMobileMenu(false);}} className={menu==='menu'?'active':" "}>menu</a>
+        <a href='#footer' onClick={()=>{setmenu("contact us"); setShowMobileMenu(false);}} className={menu==='contact us'?'active':" "}>contact us</a>
+        {!token && <button className='mobile-signin-btn' style={{cursor:"pointer",color:"black"}} onClick={()=>{setshowLogin(true); setShowMobileMenu(false);}}>sign in</button>}
+      </ul>
       <div className="navbar-right">
         <FaSearch className='icon' onClick={() => setShowSearch(!showSearch)} />
 
@@ -82,15 +90,7 @@ function Navbar({setshowLogin}) {
                 <li onClick={logout}><FaSignOutAlt className='icon' /><p>Logout</p></li>
             </ul>
           </div>}
-        <FaBars className='hamburger-icon' onClick={() => setShowMobileMenu(true)} />
-      <ul className={`navbar-menu${showMobileMenu ? ' show' : ''}`}>
-        <FaTimes className='close-icon' onClick={() => setShowMobileMenu(false)} />
-        <Link to='/' onClick={()=>{setmenu("home"); setShowMobileMenu(false);}} className={menu==='home'?'active':" "}>home</Link>
-        <a href='#app-download' onClick={()=>{setmenu("mobile-app"); setShowMobileMenu(false);}} className={menu==='mobile-app'?'active':" "}>mobile-app</a>
-        <a href='#Explore_menu' onClick={()=>{setmenu("menu"); setShowMobileMenu(false);}} className={menu==='menu'?'active':" "}>menu</a>
-        <a href='#footer' onClick={()=>{setmenu("contact us"); setShowMobileMenu(false);}} className={menu==='contact us'?'active':" "}>contact us</a>
-        {!token && <button className='mobile-signin-btn' onClick={()=>{setshowLogin(true); setShowMobileMenu(false);}}>sign in</button>}
-      </ul>
+        
       </div>
       </div>
   )
