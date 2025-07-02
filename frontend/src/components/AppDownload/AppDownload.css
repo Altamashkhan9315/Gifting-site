@@ -21,3 +21,17 @@
 .app-download-platform img:hover{
     transform: scale(1.05);
 }
+
+@media (max-width:600px) {
+    .app-download {
+        font-size: 5vw;
+    }
+    .app-download-platform {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .app-download-platform img {
+        width: 60vw;
+        max-width: 120px;
+    }
+}

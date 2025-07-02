@@ -77,3 +77,24 @@
     }
 
 }
+
+@media (max-width:600px) {
+    .Header {
+        width: 100vw;
+        height: 50vw;
+        margin: 10px 0;
+        border-radius: 0;
+    }
+    .Header-contents {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    .Header-contents h2 {
+        font-size: 7vw;
+        margin-top: 1rem;
+    }
+    .Header-contents button {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+}

@@ -23,3 +23,15 @@
 @media (max-width:990px) {
     
 }
+
+@media (max-width:600px) {
+    .Product-Display h2 {
+        font-size: 5vw;
+    }
+    .Product_item_list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 40px;
+    }
+}

@@ -3,3 +3,9 @@
     margin: 0;
     padding: 2rem;
 }
+
+@media (max-width: 600px) {
+  .home {
+    padding: 0.5rem;
+  }
+}
