@@ -27,8 +27,9 @@
         font-size: 5vw;
     }
     .app-download-platform {
-        flex-direction: column;
-        gap: 10px;
+        margin-left:10px;
+        /* flex-direction: column;
+        gap: 10px; */
     }
     .app-download-platform img {
         width: 60vw;
